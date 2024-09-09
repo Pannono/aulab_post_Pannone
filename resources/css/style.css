@@ -1,0 +1,7 @@
+:root {
+    --p: #212529e0;
+}
+
+.bg-p {
+    background-color: var(--p);
+}
