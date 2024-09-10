@@ -24,9 +24,15 @@
                             </div>
                             <div class="card-footer">
                                 <p>Redatto il {{$article->created_at->format('d/m/Y')}} <br>
-                                da {{$article->user->name}}</p>
+                                da <a href="{{route('article.byUser', $article->user)}}">{{$article->user->name}}</a></p>
                                 <a href="{{route('article.show', $article)}}" class="btn btn-primary">Leggi</a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            @endforeach
+        </div>
+    </div>
 </x-layout>

@@ -20,6 +20,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
             <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{route('careers')}}">Lavora con noi</a>
+            <li class="nav-item dropdown">
             @auth
                 
             <li class="nav-item dropdown">
@@ -27,6 +30,9 @@
                 Ciao {{auth()->user()->name}}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
+                @if (Auth::user()->is_admin)
+                    <li><a href="{{route('admin.dashboard')}}" class="dropdown-item" aria-current="page">Dashboard Admin</a></li>
+                @endif
                 <li class="dropdown-item">
                   <a href="{{route('article.create')}}" class="nav-link">Inserisci un articolo</a>
                 </li>

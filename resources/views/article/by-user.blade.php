@@ -24,10 +24,16 @@
                                 <h6 class="card-subtitle">{{$article->subtitle}}</h6>
                             </div>
                             <p class="small text-muted">Categoria:
-                                <a href="{{route('article.by-category', $article->category)}}" class="text-capitalize text-muted">{{$article->category->name}}</a>
+                                <a href="{{route('article.byCategory', $article->category)}}" class="text-capitalize text-muted">{{$article->category->name}}</a>
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            @endforeach
+
+        </div>
 
     </div>
 </x-layout>

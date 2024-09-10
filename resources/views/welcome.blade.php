@@ -3,7 +3,11 @@
     <div class="alert alert-success">
         {{ session('message') }}
     </div>
-    
+    @endif
+    @if (session('alert'))
+        <div class="alert alert-danger">
+            {{ session('alert') }}
+        </div>
     @endif
     <div class="container-fluid p-5 bg-p text-light text-center">
         <div class="row justify-content-center">
