@@ -17,6 +17,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
+            <li class="nav-item dropdown">
             @auth
                 
             <li class="nav-item dropdown">
@@ -24,7 +27,7 @@
                 Ciao {{auth()->user()->name}}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li class="nav-item">
+                <li class="dropdown-item">
                   <a href="{{route('article.create')}}" class="nav-link">Inserisci un articolo</a>
                 </li>
                 <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
@@ -37,7 +40,7 @@
           </ul>
           @endauth
           @guest
-            <li class="nav-item dropdown">
+            
               <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Benvenuto Ospite
               </a>

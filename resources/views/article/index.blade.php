@@ -1,20 +1,16 @@
 <x-layout>
-    @if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-    
-    @endif
     <div class="container-fluid p-5 bg-p text-light text-center">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h1 class="display-1 mt-5">The Aulab Post</h1>
+                <h1 class="display-1 mt-5">Tutti gli articoli</h1>
             </div>
         </div>
     </div>
+
     <div class="container my-5">
         <div class="row justify-content-evenly">
-            @foreach ($articles as $article)    
+            @foreach ($articles as $article)
+
             <div class="col-12 col-md-3">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
@@ -39,6 +35,7 @@
                 </div>
             </div>
             @endforeach
+
         </div>
     </div>
 </x-layout>
