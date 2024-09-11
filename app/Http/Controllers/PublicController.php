@@ -13,7 +13,7 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 class PublicController extends Controller implements HasMiddleware
 {
     public function homepage() {
-        $articles = Article::orderBy('created_at', 'desc')->take(3)->get();
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(3)->get();
         return view('welcome' , compact('articles'));
     }
 
