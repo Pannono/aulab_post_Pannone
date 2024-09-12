@@ -13,8 +13,17 @@
                 <img src="{{ Storage::url($article->image)}}" class="img-fluid rounded-start" alt="Immagine dell'articolo {{$article->title}}">
                 <div class="text-center">
                     <h2>{{$article->subtitle}}</h2>
+                    @if ($article->category)
                     <p class="fs-5"> Categoria:
                         <a href="{{route('article.byCategory', $article->category)}}" class="text-capitalize fw-bold text-muted">{{$article->category->name}}</a>
+                    </p>
+                    @else
+                        <p class="fs-5">Nessuna categoria</p>
+                    @endif
+                    <p class="small text-muted my-0">
+                        @foreach ($article->tags as $tag)
+                            #{{$tag->name}}
+                        @endforeach
                     </p>
                     <div class="text-muted my-3">
                         <p>Redatto il {{$article->created_at->format('d/m/Y')}} da <a href="{{route('article.byUser', $article->user)}}" class="text-capitalize text-muted fw-bold">{{$article->user->name}}</a></p>

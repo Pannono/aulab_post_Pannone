@@ -45,6 +45,14 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label for="tags" class="form-label">Tags</label>
+                        <input type="text" name="tags" class="form-control" id="tags" value="{{old('tags')}}">
+                        <span class="small text-muted fst-italic">Dividi ogni tag con una virgola</span>
+                        @error('tags')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
                         <label for="body" class="form-label">Contenuto</label>
                         <textarea class="form-control" id="body" name="body" cols="30" rows="7">{{old('body')}}</textarea>
                         @error('body')
