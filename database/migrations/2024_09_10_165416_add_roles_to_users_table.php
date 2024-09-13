@@ -34,7 +34,7 @@ return new class extends Migration
         User::where('email', 'admin@theaulabpost.it')->delete();
 
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['is_admin', 'is-revisor', 'is_writer']);
+            $table->dropColumn(['is_admin', 'is_revisor', 'is_writer']);
         });
     }
 };
