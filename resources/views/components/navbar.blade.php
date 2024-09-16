@@ -45,7 +45,7 @@
                     <li><a href="{{route('revisor.dashboard')}}" class="dropdown-item" aria-current="page">Dashboard Revisore</a></li>
                 @endif
                 @if (Auth::user()->is_writer)
-                    <li><a href="{{route('writer.dashboard')}}" class="dropdown-item" aria-current="page">Dashboard Redattore"></a></li>
+                    <li><a href="{{route('writer.dashboard')}}" class="dropdown-item" aria-current="page">Dashboard Redattore</a></li>
                 @endif
                 <li class="dropdown-item">
                   <a href="{{route('article.create')}}" class="nav-link">Inserisci un articolo</a>

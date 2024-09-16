@@ -93,7 +93,7 @@ class ArticleController extends Controller implements HasMiddleware
     public function update(Request $request, Article $article)
     {
         $request->validate([
-            'title' => 'required|unique:articles,title|min:5' . $article->id,
+            'title' => 'required|min:5|unique:articles,title,' . $article->id,
             'subtitle' => 'required|min:5',
             'body' => 'required|min:10',
             'image' => 'image',
@@ -106,8 +106,10 @@ class ArticleController extends Controller implements HasMiddleware
             'subtitle' => $request->subtitle,
             'body' => $request->body,
             'category_id' => $request->category,
+            'is_accepted' => null,
         ]);
-
+        
+        
         if($request->image){
             Storage::delete($article->image);
             $article->update([

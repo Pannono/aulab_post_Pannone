@@ -9,7 +9,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-                <form action="{{route('article.update', $article)}}" method="PUT" class="card p-5 shadow rounded border" enctype="multipart/form-data">
+                <form action="{{route('article.update', $article)}}" method="POST" class="card p-5 shadow rounded border" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
