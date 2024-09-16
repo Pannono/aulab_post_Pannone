@@ -139,7 +139,11 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function destroy(Article $article)
     {
-        //
+        foreach ($article->tags as $tag){
+            $article->tags()->detach($tag);
+        }
+        $article->delete();
+        return redirect()->back()->with('message', 'Articolo eliminato correttamente');
     }
 
     public static function middleware()
