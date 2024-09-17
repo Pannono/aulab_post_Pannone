@@ -1,11 +1,13 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
+      
       <a class="navbar-brand" href="{{route('homepage')}}">The Aulab Post</a>
+
       <nav class="navbar bg-p">
         <div class="container-fluid">
           <form class="d-flex" role="search" action="{{route('article.search')}}" method="GET">
             <input class="form-control me-2" type="search" name="query" placeholder="Cerca tra gli articoli..." aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <button class="btn btn-outline-secondary" type="submit">Cerca</button>
           </form>
         </div>
       </nav>
@@ -47,9 +49,7 @@
                 @if (Auth::user()->is_writer)
                     <li><a href="{{route('writer.dashboard')}}" class="dropdown-item" aria-current="page">Dashboard Redattore</a></li>
                 @endif
-                <li class="dropdown-item">
-                  <a href="{{route('article.create')}}" class="nav-link">Inserisci un articolo</a>
-                </li>
+                <li><a href="{{route('article.create')}}" class="dropdown-item">Inserisci un articolo</a></li>
                 <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                 </li>
                 <form action="{{route('logout')}}" method="POST" id="form-logout" class="d-none">

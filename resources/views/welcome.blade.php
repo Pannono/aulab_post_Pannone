@@ -19,7 +19,7 @@
     <div class="container my-5">
         <div class="row justify-content-evenly">
             @foreach ($articles as $article)    
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-5">
                 <x-article-card :article="$article"/>
             </div>
             @endforeach

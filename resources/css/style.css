@@ -5,3 +5,23 @@
 .bg-p {
     background-color: var(--p);
 }
+
+*{
+    font-family: "Montserrat";
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+.imgCard{
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.cardContainer{
+    width: 300px;
+}
